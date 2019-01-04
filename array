@@ -1,0 +1,48 @@
+#include<stdio.h>
+#define N 5
+
+int main()
+{
+    int arr[N],i,max,min,second,temp;
+    printf("enter array elements: ");
+
+    for(i=0; i<N; i++)
+        scanf("%d",&arr[i]);
+
+    printf("\n***YOUR ARRAY***\n");
+    for(i=0; i<N; i++)
+        printf("%d ",arr[i]);
+
+    max=arr[0];
+    for(i=1; i<N; i++)
+    {
+        if(arr[i]>max){
+           max=arr[i];
+           temp=i;
+        }
+    }
+
+    min=arr[0];
+    for(i=1; i<N; i++)
+    {
+        if(arr[i]<min){
+            min=arr[i];
+
+        }
+    }
+
+    second=arr[0];
+    for(i=1; i<N; i++)
+    {
+        if(i==temp)
+            continue;
+        if(arr[i]>second)
+        {
+            second=arr[i];
+        }
+    }
+
+    printf("\n\nlargest element= %d",max);
+    printf("\nsmallest element= %d",min);
+    printf("\nsecond largest element= %d",second);
+}
