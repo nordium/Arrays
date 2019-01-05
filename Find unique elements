@@ -1,0 +1,44 @@
+//C program to print all unique elements in a one dimention array
+
+#include<stdio.h>
+#include<stdbool.h>
+
+int main()
+{
+    int size,i,unique,j;
+    bool check=0;
+
+    printf("enter size: ");scanf("%d",&size);
+
+    int arr[size];
+
+    printf("enter elements: ");
+
+    for(i=0; i<size; i++)
+        scanf("%d",&arr[i]);
+
+    printf("\nYour Array: ");
+    for(i=0; i<size; i++)
+        printf("%d ",arr[i]);
+
+    printf("\nunique elements: ");
+
+    for(i=0; i<size; i++)
+    {
+        j=0;
+        while(j<size)
+        {
+            if(arr[i]==arr[j] && i!=j){
+                check=1;
+                break;
+            }
+            j++;
+        }
+        if(check==0){
+               unique=arr[i];
+               printf("%d ",unique);
+            }
+
+            check=0;
+    }
+}
