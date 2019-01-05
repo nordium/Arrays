@@ -1,0 +1,67 @@
+//Identity matrix is a special square matrix whose main diagonal elements is equal to 1 and other elements are 0.
+
+#include<stdio.h>
+
+int main()
+{
+    int size,i,j,check=1;
+    printf("Enter size: ");scanf("%d",&size);
+    int arr[size][size];
+    printf("Enter elements: ");
+    for(i=0; i<size; i++){
+        for(j=0; j<size; j++)
+           scanf("%d",&arr[i][j]);
+    }
+
+    printf("\n");
+    for(i=0; i<size; i++){
+        for(j=0; j<size; j++)
+           printf("%d ",arr[i][j]);
+        printf("\n");
+    }
+
+    for(i=0; i<size; i++)
+    {
+      for(j=0; j<size; j++)
+      {
+          if(i!=j)
+          {
+              if(arr[i][j]!=0){
+                 check=0;
+                 break;
+            }
+            if(check==0)
+                break;
+
+          }
+          if(check==0)
+                break;
+      }
+    }
+
+    for(i=0; i<size; i++)
+    {
+        for(j=0; j<size; j++)
+        {
+            if(i=j)
+            {
+                if(arr[i][j]!=1){
+                    check=0;
+                    break;
+                }
+
+            }
+            if(check==0)
+                break;
+        }
+        if(check==0)
+                break;
+    }
+
+    if(check)
+        printf("\nIt is a identity matrix");
+
+    else
+        printf("\nIt is not a identity matrix");
+
+}
